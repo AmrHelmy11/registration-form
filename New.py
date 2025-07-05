@@ -15,7 +15,7 @@ def create_table():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             name TEXT NOT NULL,
-            phone_number INTEGER NOT NULL,
+            phone INTEGER NOT NULL,
             faculty TEXT NOT NULL
         )
     ''')
@@ -26,7 +26,7 @@ def create_table():
 def insert_data(name, phone_number, faculty):
     conn = create_connection()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO users (name, phone_number, faculty) VALUES (?, ?, ?)', (name, phone_number, faculty))
+    cursor.execute('INSERT INTO users (name, phone, faculty) VALUES (?, ?, ?)', (name, phone, faculty))
     conn.commit()
     conn.close()
 

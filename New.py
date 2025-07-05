@@ -50,18 +50,18 @@ st.title("El Sewedy Workshop (Factory Model)")
 
 with st.form(key='data_form'):
     name = st.text_input("Name")
-    phone_number = st.number_input("phone number", min_value=0)
+    phone = st.number_input("phone number", min_value=0)
     faculty = st.text_input("faculty")
     submit_button = st.form_submit_button("Submit")
 
     if submit_button:
         # Insert the data into the database
-        insert_data(name, phone_number, faculty)
+        insert_data(name, phone, faculty)
 
         # Create a DataFrame from the input data
         data = pd.DataFrame({
             'Name': [name],
-            'Phone Number': [phone_number],
+            'Phone Number': [phone],
             'Faculty': [faculty]
         })
 

@@ -15,7 +15,7 @@ def create_table():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             name TEXT NOT NULL,
-            phone number INTEGER NOT NULL,
+            phone_number INTEGER NOT NULL,
             faculty TEXT NOT NULL
         )
     ''')
